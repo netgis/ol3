@@ -1,0 +1,65 @@
+﻿html ,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	overflow-x:hidden;
+}
+
+#map {
+	width:100%;
+	height:100%;
+}
+
+.ui-content{
+	padding:0px;
+}
+
+.ol-attribution {
+    max-width: 50%;
+}
+
+.gpspoint{
+    font-size: 10px;
+	background:url(images/gpspoint.png);
+	width:16px;
+	height:16px;
+	z-index:1200;
+	position:absolute;
+}
+
+#gpsmessage{
+	margin:0px;
+	padding:0px;
+}
+
+#gpsmessagebox{
+	font-size:11px;
+	color:#036;
+}
+
+#infomessagebox{
+	font-size:11px;
+	color:#036;
+}
+
+
+#compassneedle {
+	position:absolute;
+	top:16px;
+	right:26px;
+    background:url(../img/needle.png);
+    width:20px;
+    height:50px;
+    z-index:1100;
+}
+
+#compassinfo {
+    color: black;
+    width:90px;
+	height:20px;
+	background-color:#CCC;
+	
+}
+
+

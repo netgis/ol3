@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+<link rel="stylesheet" href="css/ol3.css" type="text/css">
+<link rel="stylesheet" href="css/map.css" type="text/css">
+<script src="js/cordova-2.4.0.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+<script src="js/ol3.js" ></script>
+<script src="js/map.js" ></script>
+<script src="js/compass.js" ></script>
+<title>OL3 Map</title>
+</head>
+<body>
+<!-- Mappage -->
+<div data-role="page" id="mappage" data-theme="c"> 
+  <!-- /left panel -->
+  <div data-role="panel" data-position="left" data-position-fixed="true" data-display="overlay" data-theme="c" id="nav-panel">
+    <ul data-role="listview" data-theme="c" class="nav-search">
+      <li data-icon="delete"><a href="#" data-rel="close">Menu</a></li>
+    </ul>
+    <br>
+    <label for="gpsstatus">Watch GPS:</label>
+    <select name="gpsstatus" id="gpsstatus" data-role="slider" data-mini="true" >
+      <option value="off" selected>Off</option>
+      <option value="on">On</option>
+    </select>
+    <div id="gpsmessage"></div>
+	<br>
+	<label for="compassstatus">Watch Compass:</label>
+	<select data-role="slider" name="compassstatus" id="compassstatus" data-mini="true" >
+		<option value="off" selected>Off</option>
+		<option value="on">On</option>		
+	</select>
+	
+	<div id="compassmapstatusdiv">
+	<label for="compassmapstatus">Rotate Map:</label>
+	<select data-role="slider" name="compassmapstatus" id="compassmapstatus" data-mini="true" >
+		<option value="off" selected>Off</option>
+		<option value="on">On</option>		
+	</select>
+	</div>
+	<br>
+    <fieldset data-role="controlgroup"  data-mini="true" >
+      <legend>Layer:</legend>
+      <input name="bglayer" id="mapquest" type="radio" value="0" checked>
+      <label for="mapquest">OSM MapQuest</label>
+      <input name="bglayer" id="osm" type="radio" value="1" >
+      <label for="osm">OSM Standard</label>
+      <input name="bglayer" id="openaereal" type="radio" value="2" >
+      <label for="openaereal">MapQuest Open Aerial</label>
+    </fieldset>
+  </div>
+  <!-- /Ende left panel --> 
+  
+  <!-- /info popup -->
+	<div data-role="popup" id="popupMenu" data-theme="c" class="ui-corner-all">
+	<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		<div data-role="header" data-theme="c" class="ui-corner-top">
+			<h1>Tools</h1>
+		</div>
+		<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+			<div style="font-size:14px; padding: 12px;" >
+				<strong>AppInfos</strong><br>
+				Open Source Software:<br>
+				OpenLayers r3.0.0-alpha.1<br>
+				jQuery mobile 1.3.1<br>
+				Phonegap/ Cordova 2.4.0<br><br>				
+				Contact:<br>
+				Sven Schroeter<br>
+				<a href="https://twitter.com/sven_s8" target="_blank">@sven_s8 </a><br><br>
+			</div>
+		</div>
+	</div>
+  <!-- /Ende info popup -->
+  
+  <!-- /Map page -->
+  <div id="head" data-theme="c" data-role="header" data-position="fixed">
+    <h3>OL3 Map </h3>
+    <a href="#nav-panel" data-icon="bars" class="ui-btn-left">Menu</a> <a href="#popupMenu" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-transition="pop"  data-iconpos="notext" >Info</a> </div>
+  <div data-role="content">
+	<div id="compassneedle"></div>	
+    <div id="map"></div>
+  </div>
+  <!-- /Ende Map page -->
+</div>
+</body>
+</html>
